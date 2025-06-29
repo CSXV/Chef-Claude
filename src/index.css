@@ -1,0 +1,279 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* colors */
+:root {
+  --primary01: #d17557;
+  --primary02: #fcefeb;
+  /* --primary02: #f9efeb; */
+  --primary03: #fafaf8;
+
+  --secondary01: #475467;
+  --secondary02: #6b7280;
+  --secondary03: #d1d5db;
+
+  --white: white;
+  --black: black;
+}
+
+/* fonts */
+:root {
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary03);
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--black);
+}
+
+.footer-container,
+.header-container {
+  display: flex;
+  gap: 1rem;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 5rem;
+  background-color: var(--white);
+  box-shadow:
+    0px 1px 3px rgb(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+.header-text {
+  font-weight: var(--font-weight-normal);
+}
+
+.main-container {
+  padding: 0 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+}
+
+.main-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 3rem 0;
+
+  justify-content: center;
+  /* align-items: center; */
+
+  height: 38px;
+}
+
+.form-input {
+  border-radius: 6px;
+  border: 1px solid var(--secondary03);
+
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-family);
+
+  padding: 15px 15px;
+  flex-grow: 1;
+
+  /* min-width: 150px; */
+  /* max-width: 800px; */
+}
+
+.form-button {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+
+  border-radius: 6px;
+  border: none;
+
+  background-color: var(--black);
+  color: var(--white);
+
+  width: 160px;
+  min-height: 38px;
+  cursor: pointer;
+}
+
+.pill:hover,
+.recipe-button:hover,
+.form-button:hover {
+  opacity: 0.8;
+  transition: 0.1s ease;
+  transform: scale(1.03);
+}
+
+.form-button::before {
+  content: "+";
+  margin-right: 5px;
+}
+
+.section-container {
+  margin: 4rem 0rem;
+}
+
+.section-head {
+  /* margin: 3rem 0px 1rem; */
+  font-weight: var(--font-weight-bold);
+}
+
+.ingredients-list {
+  color: var(--secondary01);
+  margin: 2rem;
+}
+
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  border: 0px;
+  border-radius: 8px;
+
+  padding: 3rem;
+  margin: auto;
+  margin-top: 5rem;
+
+  background-color: var(--primary02);
+}
+
+.recipe-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe-text-p {
+  color: var(--secondary02);
+}
+
+.recipe-button {
+  font-family: var(--font-family);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+  cursor: pointer;
+  padding: 11px 17px;
+  min-width: 111px;
+
+  border-radius: 8px;
+  border: 0px;
+
+  color: var(--white);
+  background-color: var(--primary01);
+}
+
+.ai-recipe-container ul li,
+.ai-recipe-container ol li {
+  margin-bottom: 8px;
+}
+
+.ai-recipe-container {
+  margin: 4rem 0rem;
+}
+
+.ai-recipe-container li {
+  margin: 1rem 2rem;
+}
+
+/* .footer-container { */
+/*   font-size: 1.2rem; */
+/* } */
+
+.help-container {
+  background-color: var(--primary02);
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+Main {
+  flex: 1;
+}
+
+.ai-recipe-article {
+  margin-top: 1rem;
+}
+
+.pill {
+  display: flex;
+
+  align-items: center;
+  padding: 8px 16px;
+
+  background-color: var(--primary01);
+  color: var(--white);
+  border-radius: 6px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.pill::after {
+  content: "×";
+  margin-left: 10px;
+}
+
+.ingredients-pill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  margin: 1rem 0;
+}
+
+.info-icon {
+  border: 1px solid var(--primary01);
+  border-radius: 50%;
+
+  padding: 0.75rem;
+  margin-right: 1rem;
+
+  color: var(--primary01);
+}
+
+@media (max-width: 34rem) {
+  /*530px / 16px = 34rem*/
+  /*34rem * 16px = 544px*/
+
+  .get-recipe-container {
+    flex-direction: column;
+  }
+
+  .main-form {
+    flex-direction: column;
+  }
+
+  .form-button {
+    min-width: 100%;
+    min-height: 48px;
+  }
+
+  .recipe-button {
+    min-width: 100%;
+    min-height: 48px;
+  }
+}
